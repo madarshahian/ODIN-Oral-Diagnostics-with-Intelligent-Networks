@@ -1,0 +1,48 @@
+====================================================================
+5-FOLD CROSS-VALIDATION SUMMARY
+====================================================================
+Folds with results: 5 / 5
+
+Metric                   Mean      Std   Per-fold values
+--------------------------------------------------------------------
+accuracy               0.9115   0.0267   [0.928  0.927  0.930  0.913  0.860]
+F1-macro               0.9036   0.0242   [0.926  0.902  0.921  0.912  0.858]
+F1-weighted            0.9110   0.0296   [0.928  0.928  0.932  0.914  0.853]
+precision_healthy      0.8616   0.0893   [0.937  0.723  0.800  0.966  0.881]
+recall_healthy         0.9427   0.0355   [0.881  0.941  0.970  0.938  0.983]
+specificity_healthy    0.9648   0.0151   [0.984  0.958  0.947  0.982  0.954]
+F1-healthy             0.8969   0.0466   [0.908  0.818  0.877  0.952  0.930]
+precision_lesion       0.9234   0.0698   [0.918  0.983  0.984  0.794  0.938]
+recall_lesion          0.8760   0.1179   [0.941  0.876  0.931  0.982  0.650]
+specificity_lesion     0.9545   0.0375   [0.930  0.984  0.989  0.893  0.977]
+F1-lesion              0.8917   0.0670   [0.929  0.927  0.957  0.878  0.768]
+precision_mrc          0.9247   0.0636   [0.937  0.931  0.948  1.000  0.807]
+recall_mrc             0.9265   0.0567   [0.942  0.993  0.911  0.826  0.960]
+specificity_mrc        0.9480   0.0522   [0.969  0.955  0.968  1.000  0.848]
+F1-mrc                 0.9224   0.0290   [0.940  0.961  0.929  0.905  0.877]
+
+Headline (paper-ready):
+  Accuracy   : 91.15% ± 2.67%
+  Macro-F1   : 0.9036 ± 0.0242
+  F1 healthy : 0.8969 ± 0.0466
+  F1 lesion  : 0.8917 ± 0.0670
+  F1 mrc     : 0.9224 ± 0.0290
+
+--------------------------------------------------------------------
+POOLED (all out-of-fold predictions, every patient once):
+  Pooled accuracy : 0.9155
+  Pooled macro-F1 : 0.9133
+  Pooled ECE      : 0.0422  (N=6024, 10-bin; lower = better calibrated)
+
+              precision    recall  f1-score   support
+
+     healthy     0.8621    0.9403    0.8995      1190
+      lesion     0.9418    0.8815    0.9107      2608
+         mrc     0.9177    0.9420    0.9297      2226
+
+    accuracy                         0.9155      6024
+   macro avg     0.9072    0.9213    0.9133      6024
+weighted avg     0.9172    0.9155    0.9155      6024
+
+
+t-SNE: representative figure is Fold 4 (test accuracy 0.9126, closest to the 0.9115 mean). t-SNE is NOT pooled across folds because each fold is a distinct model with its own feature space.

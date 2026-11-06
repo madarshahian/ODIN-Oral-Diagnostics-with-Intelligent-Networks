@@ -1,0 +1,21 @@
+{
+  "run_name": "fold_5/run_20260721_213339",
+  "timestamp": "2026-07-21T22:29:37.247661",
+  "img_size": [
+    325,
+    325
+  ],
+  "batch_size": 16,
+  "epochs_trained": 51,
+  "random_seed": 42,
+  "num_train_pairs": 4614,
+  "num_val_pairs": 470,
+  "num_test_pairs": 940,
+  "class_names": [
+    "healthy",
+    "lesion",
+    "mrc"
+  ],
+  "best_model_path": "logs/fold_5/run_20260721_213339/best_model_composite.keras",
+  "test_accuracy": 0.8595744680851064
+}

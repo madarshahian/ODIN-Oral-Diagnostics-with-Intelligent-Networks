@@ -1,0 +1,11 @@
+===== Classification Report =====
+
+              precision    recall  f1-score   support
+
+     healthy     0.8298    0.9606    0.8904       203
+      lesion     0.9826    0.9544    0.9683      1008
+         mrc     0.9850    0.9809    0.9829       734
+
+    accuracy                         0.9650      1945
+   macro avg     0.9325    0.9653    0.9472      1945
+weighted avg     0.9676    0.9650    0.9657      1945

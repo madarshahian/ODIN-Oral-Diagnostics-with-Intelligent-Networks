@@ -1,0 +1,41 @@
+# 1. Patient data
+**/kfold_data/
+**/padded_pool/
+**/Data_*/
+**/*.dcm
+**/*.jpg
+**/*.jpeg
+**/*.zip
+**/manuscript/
+# 2. Figures that show patient CBCT images
+**/output_figures/**/gradcam*
+**/output_figures/**/misclassified_images*
+**/output_figures/post_analysis/**/per_branch/
+**/output_figures/post_analysis/**/post_fusion/
+**/output_figures/post_analysis/**/last_conv/
+# 3. Files that list every image file name
+**/*_epoch1_samples.txt
+**/artifacts/test_pairs.pkl
+**/artifacts/val_pairs.pkl
+# 4. Superseded runs, backups, working files
+**/output_figures_backup_preMACL/
+**/logs/fold_5_FAILED_*/
+**/logs/fold_5_plateau_*/
+**/output_figures/fold_5_failed/
+**/output_figures/fold_5_plateau_*/
+**/*.bak
+**/*.diff
+**/regen_figures_MACL.sh
+# 5. Extra checkpoints
+**/best_model_f1.keras
+**/best_model_loss.keras
+# 6. Raw console logs
+**/logs/*.log
+# 7. Python / Jupyter / OS
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+**/*.[jJ][pP][gG]
+**/*.[jJ][pP][eE][gG]
+**/*.[dD][cC][mM]

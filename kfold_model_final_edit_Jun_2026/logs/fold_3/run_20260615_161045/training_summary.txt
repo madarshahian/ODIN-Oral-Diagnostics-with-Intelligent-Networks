@@ -1,0 +1,20 @@
+===== Training Summary =====
+Run Name: fold_3/run_20260615_161045
+Random Seed: 42
+Total Epochs: 75
+Total Training Time: 93992.22 s (26.11 h)
+Average Time per Epoch: 1253.23 s
+
+Best Validation Loss: 0.5647 (Epoch 45)
+  Val Accuracy:  0.8923
+  Val Precision: 0.8938
+  Val Recall:    0.8904
+
+Best Validation Accuracy: 0.9000 (Epoch 30)
+  Val Loss: 0.8246
+
+Final Metrics (Epoch 75):
+  Train Loss:     0.0050
+  Train Accuracy: 0.9999
+  Val Loss:       1.5514
+  Val Accuracy:   0.7827

@@ -1,0 +1,188 @@
+==========================================================================
+DATA PREPARATION — 5-FOLD PATIENT-LEVEL CROSS-VALIDATION + square padding
+==========================================================================
+Timestamp           : 2026-06-13T13:50:11
+Random seed         : 9
+Input directory     : /home/ai-hacker/projects/ODIN-Oral-Diagnostics-with-Intelligent-Networks/Omni_model/kfold_model_final_edit_Jun_2026/Data_Oct_2025_Data_Reorganized
+Padded pool         : /home/ai-hacker/projects/ODIN-Oral-Diagnostics-with-Intelligent-Networks/Omni_model/kfold_model_final_edit_Jun_2026/padded_pool
+K-fold base         : /home/ai-hacker/projects/ODIN-Oral-Diagnostics-with-Intelligent-Networks/Omni_model/kfold_model_final_edit_Jun_2026/kfold_data
+Number of folds     : 5
+Validation fraction : 0.15  (carved from the 4 training folds)
+Classes             : ['healthy', 'lesion', 'mrc']
+Views               : ['cr', 'sg']
+
+──────────────────────────────────────────────────────────────────────────
+PRE-FLIGHT — verifying input directories and gathering dimensions
+──────────────────────────────────────────────────────────────────────────
+
+  Resolving input directories (case-insensitive):
+    ✓ healthy/cr  →  Data_Oct_2025_Data_Reorganized/healthy/CR
+    ✓ healthy/sg  →  Data_Oct_2025_Data_Reorganized/healthy/SG
+    ✓ lesion/cr  →  Data_Oct_2025_Data_Reorganized/lesion/CR
+    ✓ lesion/sg  →  Data_Oct_2025_Data_Reorganized/lesion/SG
+    ✓ mrc/cr  →  Data_Oct_2025_Data_Reorganized/MRC/CR
+    ✓ mrc/sg  →  Data_Oct_2025_Data_Reorganized/MRC/SG
+
+  healthy /cr:  278 images at Data_Oct_2025_Data_Reorganized/healthy/CR
+  healthy /sg:  256 images at Data_Oct_2025_Data_Reorganized/healthy/SG
+  lesion  /cr:  274 images at Data_Oct_2025_Data_Reorganized/lesion/CR
+  lesion  /sg:  214 images at Data_Oct_2025_Data_Reorganized/lesion/SG
+  mrc     /cr:  277 images at Data_Oct_2025_Data_Reorganized/MRC/CR
+  mrc     /sg:  231 images at Data_Oct_2025_Data_Reorganized/MRC/SG
+
+Image dimension statistics (n=1530):
+  width  : min=204  max=685  mean=446.1  median=448  std=81.4
+  height : min=302  max=712  mean=570.2  median=582  std=40.3
+  PAD_SIZE chosen   : 712 × 712  (max of all w/h)
+  ✓ image_dimension_stats.csv  (1530 rows)
+
+──────────────────────────────────────────────────────────────────────────
+PATIENT INDEXING
+──────────────────────────────────────────────────────────────────────────
+  healthy : 145 unique patients  (278 cr, 256 sg)
+  lesion  : 38 unique patients  (274 cr, 214 sg)
+  mrc     : 51 unique patients  (277 cr, 231 sg)
+
+──────────────────────────────────────────────────────────────────────────
+PADDING → CANONICAL POOL (real files, written once)
+──────────────────────────────────────────────────────────────────────────
+  healthy  | cr :  278 padded images → padded_pool/healthy/cr
+  healthy  | sg :  256 padded images → padded_pool/healthy/sg
+  lesion   | cr :  274 padded images → padded_pool/lesion/cr
+  lesion   | sg :  214 padded images → padded_pool/lesion/sg
+  mrc      | cr :  277 padded images → padded_pool/mrc/cr
+  mrc      | sg :  231 padded images → padded_pool/mrc/sg
+
+  ✓ pooled: 1530   skipped: 0
+  ✓ image_manifest.csv  (1530 rows)
+
+──────────────────────────────────────────────────────────────────────────
+BUILDING 5 PATIENT-LEVEL FOLDS (per class)
+──────────────────────────────────────────────────────────────────────────
+  healthy : 145 patients → fold sizes [29 / 29 / 29 / 29 / 29]
+  lesion  : 38 patients → fold sizes [8 / 8 / 8 / 7 / 7]
+  mrc     : 51 patients → fold sizes [11 / 10 / 10 / 10 / 10]
+
+──────────────────────────────────────────────────────────────────────────
+MATERIALIZING FOLD DIRECTORIES (symlinks) + role assignment
+──────────────────────────────────────────────────────────────────────────
+
+  ── fold_1 ──
+    healthy : train= 99  val= 17  test= 29 patients
+    lesion  : train= 26  val=  4  test=  8 patients
+    mrc     : train= 34  val=  6  test= 11 patients
+    ✓ no leakage across train/val/test in fold_1
+
+  ── fold_2 ──
+    healthy : train= 99  val= 17  test= 29 patients
+    lesion  : train= 26  val=  4  test=  8 patients
+    mrc     : train= 35  val=  6  test= 10 patients
+    ✓ no leakage across train/val/test in fold_2
+
+  ── fold_3 ──
+    healthy : train= 99  val= 17  test= 29 patients
+    lesion  : train= 26  val=  4  test=  8 patients
+    mrc     : train= 35  val=  6  test= 10 patients
+    ✓ no leakage across train/val/test in fold_3
+
+  ── fold_4 ──
+    healthy : train= 99  val= 17  test= 29 patients
+    lesion  : train= 26  val=  5  test=  7 patients
+    mrc     : train= 35  val=  6  test= 10 patients
+    ✓ no leakage across train/val/test in fold_4
+
+  ── fold_5 ──
+    healthy : train= 99  val= 17  test= 29 patients
+    lesion  : train= 26  val=  5  test=  7 patients
+    mrc     : train= 35  val=  6  test= 10 patients
+    ✓ no leakage across train/val/test in fold_5
+
+  Verifying each patient appears in TEST exactly once across folds...
+    ✓ healthy: all 145 patients tested exactly once
+    ✓ lesion: all 38 patients tested exactly once
+    ✓ mrc: all 51 patients tested exactly once
+  ✓ leakage_report.txt
+  ✓ fold_assignment.csv  (1170 rows)
+
+──────────────────────────────────────────────────────────────────────────
+SUMMARY (image counts per fold × role × class)
+──────────────────────────────────────────────────────────────────────────
+
+  fold_1
+  Role        | Class    |  #CR |  #SG | #Total
+  ------------+----------+------+------+-------
+  train       | healthy  |  195 |  174 |   369
+  train       | lesion   |  200 |  140 |   340
+  train       | mrc      |  177 |  146 |   323
+  validation  | healthy  |   28 |   26 |    54
+  validation  | lesion   |   25 |   28 |    53
+  validation  | mrc      |   42 |   45 |    87
+  test        | healthy  |   55 |   56 |   111
+  test        | lesion   |   49 |   46 |    95
+  test        | mrc      |   58 |   40 |    98
+
+  fold_2
+  Role        | Class    |  #CR |  #SG | #Total
+  ------------+----------+------+------+-------
+  train       | healthy  |  201 |  172 |   373
+  train       | lesion   |  174 |  144 |   318
+  train       | mrc      |  192 |  144 |   336
+  validation  | healthy  |   30 |   31 |    61
+  validation  | lesion   |    7 |    7 |    14
+  validation  | mrc      |   24 |   16 |    40
+  test        | healthy  |   47 |   53 |   100
+  test        | lesion   |   93 |   63 |   156
+  test        | mrc      |   61 |   71 |   132
+
+  fold_3
+  Role        | Class    |  #CR |  #SG | #Total
+  ------------+----------+------+------+-------
+  train       | healthy  |  191 |  176 |   367
+  train       | lesion   |  205 |  150 |   355
+  train       | mrc      |  181 |  155 |   336
+  validation  | healthy  |   35 |   37 |    72
+  validation  | lesion   |   10 |   21 |    31
+  validation  | mrc      |   41 |   22 |    63
+  test        | healthy  |   52 |   43 |    95
+  test        | lesion   |   59 |   43 |   102
+  test        | mrc      |   55 |   54 |   109
+
+  fold_4
+  Role        | Class    |  #CR |  #SG | #Total
+  ------------+----------+------+------+-------
+  train       | healthy  |  176 |  173 |   349
+  train       | lesion   |  222 |  166 |   388
+  train       | mrc      |  181 |  158 |   339
+  validation  | healthy  |   37 |   29 |    66
+  validation  | lesion   |   23 |   17 |    40
+  validation  | mrc      |   39 |   47 |    86
+  test        | healthy  |   65 |   54 |   119
+  test        | lesion   |   29 |   31 |    60
+  test        | mrc      |   57 |   26 |    83
+
+  fold_5
+  Role        | Class    |  #CR |  #SG | #Total
+  ------------+----------+------+------+-------
+  train       | healthy  |  186 |  177 |   363
+  train       | lesion   |  195 |  164 |   359
+  train       | mrc      |  209 |  169 |   378
+  validation  | healthy  |   33 |   29 |    62
+  validation  | lesion   |   35 |   19 |    54
+  validation  | mrc      |   22 |   22 |    44
+  test        | healthy  |   59 |   50 |   109
+  test        | lesion   |   44 |   31 |    75
+  test        | mrc      |   46 |   40 |    86
+
+  ✓ kfold_summary.csv  (45 rows)
+  ✓ kfold_composition.[png|pdf|svg] → output_figures/data/
+
+==========================================================================
+DONE. 5-fold structure ready under: /home/ai-hacker/projects/ODIN-Oral-Diagnostics-with-Intelligent-Networks/Omni_model/kfold_model_final_edit_Jun_2026/kfold_data/
+      Canonical padded pool: /home/ai-hacker/projects/ODIN-Oral-Diagnostics-with-Intelligent-Networks/Omni_model/kfold_model_final_edit_Jun_2026/padded_pool/
+      Logs: /home/ai-hacker/projects/ODIN-Oral-Diagnostics-with-Intelligent-Networks/Omni_model/kfold_model_final_edit_Jun_2026/logs/data_prep_kfold_20260613_135011/
+==========================================================================
+
+Next: run training once per fold, e.g.
+  for k in $(seq 1 5); do \
+      python 02_model_training_kfold.py --fold $k; \
+  done

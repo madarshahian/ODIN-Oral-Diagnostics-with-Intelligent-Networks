@@ -1,0 +1,17 @@
+{
+  "data_dir": "kfold_data/fold_3/test",
+  "target_size": [
+    325,
+    325
+  ],
+  "batch_size": 16,
+  "classes": [
+    "healthy",
+    "lesion",
+    "mrc"
+  ],
+  "shuffle": false,
+  "pairs_per_patient": 1,
+  "mix_across_patients": false,
+  "run_name": "fold_3/run_20260721_181833"
+}

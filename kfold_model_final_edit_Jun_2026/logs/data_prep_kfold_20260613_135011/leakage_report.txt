@@ -1,0 +1,6 @@
+fold_1: OK
+fold_2: OK
+fold_3: OK
+fold_4: OK
+fold_5: OK
+Test coverage exactly-once: OK

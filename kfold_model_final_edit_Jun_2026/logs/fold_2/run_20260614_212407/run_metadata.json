@@ -1,0 +1,20 @@
+{
+  "run_name": "fold_2/run_20260614_212407",
+  "timestamp": "2026-06-14T21:24:08.149717",
+  "random_seed": 42,
+  "img_size": [
+    325,
+    325
+  ],
+  "batch_size": 16,
+  "epochs": 300,
+  "num_classes": 3,
+  "classes": [
+    "healthy",
+    "lesion",
+    "mrc"
+  ],
+  "train_pairs": 88303,
+  "val_pairs": 276,
+  "test_pairs": 1945
+}

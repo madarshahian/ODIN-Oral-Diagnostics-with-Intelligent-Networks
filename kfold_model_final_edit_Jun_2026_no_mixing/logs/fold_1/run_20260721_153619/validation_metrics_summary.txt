@@ -1,0 +1,27 @@
+===== Validation Metrics Summary =====
+
+Best Validation Loss: 0.1562 (Epoch 59)
+  Val Accuracy:  0.9657
+  F1 (weighted): 0.9658
+  F1 (macro):    0.9526
+
+Best F1 (weighted): 0.9658 (Epoch 59)
+  Val Loss:     0.1562
+  Val Accuracy: 0.9657
+
+Per-Class Metrics at Best Val Loss (Epoch 59):
+
+  Healthy:
+    F1:        0.9174
+    Precision: 0.9009
+    Recall:    0.9346
+
+  Lesion:
+    F1:        0.9537
+    Precision: 0.9619
+    Recall:    0.9456
+
+  Mrc:
+    F1:        0.9868
+    Precision: 0.9856
+    Recall:    0.9880

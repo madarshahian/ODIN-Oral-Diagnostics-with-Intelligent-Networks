@@ -1,0 +1,10 @@
+split,class,patients,coronal,sagittal,images
+train,healthy,99,186,177,363
+train,lesion,26,195,164,359
+train,mrc,35,209,169,378
+val,healthy,17,33,29,62
+val,lesion,5,35,19,54
+val,mrc,6,22,22,44
+test,healthy,29,59,50,109
+test,lesion,7,44,31,75
+test,mrc,10,46,40,86
