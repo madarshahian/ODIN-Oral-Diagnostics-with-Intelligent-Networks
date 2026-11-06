@@ -1,0 +1,10 @@
+# Versions used for all results reported in the paper (Python 3.12.11)
+tensorflow==2.20.0
+keras==3.11.3
+scikit-learn==1.7.1
+numpy==2.0.1
+# Plotting and data handling (any recent version)
+matplotlib
+pandas
+scipy
+pillow

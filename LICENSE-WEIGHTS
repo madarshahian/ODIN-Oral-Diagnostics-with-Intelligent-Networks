@@ -1,0 +1,16 @@
+Copyright (c) 2026 Najmeh Movahhedian, Farimah Heidari, Ramin Madarshahian
+
+The trained model weights (*.keras), saved predictions and training records
+(*.pkl, *.csv, *.json, *.txt under logs/) and the figures (output_figures/) in
+this repository are licensed under the Creative Commons
+Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0).
+
+You are free to share and adapt this material for non-commercial purposes,
+provided that you give appropriate credit (cite the associated article; see
+README.md), provide a link to the license, and indicate if changes were made.
+
+Full license text: https://creativecommons.org/licenses/by-nc/4.0/legalcode
+
+The model was trained on retrospective, de-identified clinical CBCT data. It
+is provided for research use only. It is not a medical device and has not
+been validated for clinical use.
